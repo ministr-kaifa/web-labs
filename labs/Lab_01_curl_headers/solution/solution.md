@@ -53,7 +53,7 @@ X-XSS-Protection: 0 # Отключает защиту от XSS браузера
 Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin # степень детализации атрибута referer при переходе на другой сайт
 Content-Security-Policy:    # хосты к которым можно подключиться с этой страницы
 Accept-Ranges: bytes    # поддержка запроса по частям
-X-GitHub-Request-Id: 38EC:F5DF:2CB3B0:2D1A11:652E81A5   # атрибут имеющий отношение только к гитхабу, айди запроса для логирования или баг трекинга
+X-GitHub-Request-Id:   # атрибут имеющий отношение только к гитхабу, айди запроса для логирования или баг трекинга
 ```
 
 
@@ -84,21 +84,21 @@ Reporting-Endpoints: default="https://ya.ru/portal/front/reports/?..."  # для
 ```
 
 
-### Python
+### python.org
 
 
 ```shell
 $ curl https://www.python.org --head
 
 Age: 3341   # секунд ответ был в кеше
-X-Served-By: cache-iad-kiad7000025-IAD, cache-bma1680-BMA   # кешевый источник?
-X-Cache: HIT, HIT   # информация о кеше
-X-Cache-Hits: 11, 8   # информация о кеше
-X-Timer: S1697549525.694268,VS0,VE0   # информация о кеше
+X-Served-By: cache-iad-kiad7000025-IAD, cache-bma1680-BMA   # этот и следующие атрибуты нужны для географически распределенного кеширования(cdn)
+X-Cache: HIT, HIT 
+X-Cache-Hits: 11, 8 
+X-Timer: S1697549525.694268,VS0,VE0   
 ```
 
 
-### Saint GIT
+### git-scm.com 
 
 
 ```shell
@@ -109,26 +109,25 @@ X-Permitted-Cross-Domain-Policies: none # запрет междоменных з
 ```
 
 
-### Jetbrains
+### jetbrains.com
 
 
 ```shell
 $ curl https://www.jetbrains.com --head
 
 Alt-Svc: h3=":443"; ma=86400    # сервер поддерживает http3
-X-Cache: Hit from cloudfront    # характерно для AWS
-X-Amz-Cf-Pop: FRA56-P2      # AWS
-X-Amz-Cf-Id: Zo7Ly2UKi3BKJUWjUE02H3mMblHIaubeBMVrte1fww7zx9akF_cfcg== # AWS
+X-Cache: Hit from cloudfront    # этот и последующие атрибуты имеют отношение к cdn и aws
+X-Amz-Cf-Pop: FRA56-P2
+X-Amz-Cf-Id:
 ```
 
 
 
-### VS-Code
+### code.visualstudio.com
 
 ```shell
 $ curl https://code.visualstudio.com --head
 
 X-Powered-By: ASP.NET   # 🤯
-x-azure-ref: 20231017T134147Z-5ufdht9ft91dz5fh0zkkx9u32g0000000850000000010rz0  # характерно для azure(🤯)
-X-Cache: CONFIG_NOCACHE
+x-azure-ref:   # характерно для azure(🤯)
 ```
