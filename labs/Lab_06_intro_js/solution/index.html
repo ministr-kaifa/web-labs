@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>JS</title>
+</head>
+<body>
+<script>
+    let apple = 10;
+    console.log(apple);
+    alert(apple);
+    let condition = "";
+    let conditionLen = 10;
+    for (let i = 0; i < conditionLen; i++) {
+        condition += String.fromCharCode("a".charCodeAt(0) + Math.floor(Math.random() * 27));
+    }
+    console.log("Good game is " + condition)
+</script>
+<script>
+    let n = 88;
+    let s = "100";
+    let t = true;
+
+    console.log(n + s + t);
+    console.log(n + t + s);
+    console.log(t + n + s);
+    console.log(s + n + t);
+    console.log(t + s + n);
+    console.log(s + t + n);
+</script>
+<script>
+    let arr = new Array(10);
+    for(let i = 0; i < arr.length; i++) {
+        arr[i] = -10 + Math.floor(Math.random() * 21);
+    }
+    arr = arr.filter(n => n > 0);
+    console.log(arr);
+</script>
+<script>
+
+    function randRange(from, to) {
+        return from + Math.floor(Math.random() * (to - from + 1));
+    }
+
+    function multiply(arr, multiplyBy) {
+        return arr.map(n => n * multiplyBy);
+    }
+
+    let wordGenerator = function(wordLength) {
+        var word = ""
+        for (let i = 0; i < conditionLen; i++) {
+            word += String.fromCharCode("a".charCodeAt(0) + randRange(0, 26));
+        }
+        return word;
+    }
+
+    console.log(wordGenerator(10));
+</script>
+<script>
+    class Student {
+        constructor(firstName, surname, patronymic, birthday, hobby, group) {
+            this.firstName = firstName;
+            this.surname = surname;
+            this.patronymic = patronymic;
+            this.birthday = birthday;
+            this.hobby = hobby;
+            this.group = group;
+        }
+
+        toString() {
+            return `Студент: ${this.surname} ${this.firstName} ${this.patronymic}\n` +
+                   `Дата рождения: ${this.birthday}\n` +
+                   `Хобби: ${this.hobby}\n` +
+                   `Группа: ${this.group}`;
+        }
+    }
+
+    class AverageSalaryCalculator {
+        constructor(salaryMap) {
+            this.salaryMap = salaryMap;
+        }
+
+        calculate() {
+            return [...this.salaryMap.values()].reduce((a,b) => a + b) / this.salaryMap.size;
+        }
+    }
+
+    let student = new Student(
+        "Иван",
+        "Иванов",
+        "Иванович",
+        new Date("2.2.2003"),
+        "Дайвинг",
+        "АСБ-3-038"
+    )
+
+    console.log(student);
+    console.log(student.toString());
+    
+    averageSalaryCalculator = new AverageSalaryCalculator(new Map([
+        ["Ivanov", 20000],
+        ["Petrov", 25000],
+        ["Sidorov", 30000],
+        ["Kozlov", 18000],
+        ["Smirnov", 22000],
+        ["Kuznetsov", 28000],
+        ["Vasiliev", 24000],
+        ["Popov", 27000],
+        ["Novikov", 21000],
+        ["Morozov", 26000]
+    ]));
+
+    console.log(averageSalaryCalculator.calculate());
+</script>
+</body>
+</html>

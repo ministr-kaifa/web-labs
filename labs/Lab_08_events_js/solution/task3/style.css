@@ -1,0 +1,30 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+.container {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 300px calc(100% - 300px);
+}
+
+#color_memory {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+}
+
+.memorized_color {
+    height: 100%;
+}
+
+#color_picker {
+    width: 100%;
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
