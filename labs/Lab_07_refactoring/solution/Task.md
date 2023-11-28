@@ -35,7 +35,7 @@ a += 'world';
     ]);
     fruits.forEach(fruit => console.log(fruit + " " + fruitColor.get(fruit)));
 
-    //но если эти значения хардкод то лучше так
+    //но если эти значения в рантайме не меняются то лучше так
     fruits.forEach(fruit => {
     let color;
       switch (fruit) {
