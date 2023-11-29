@@ -22,14 +22,26 @@ html, body {
 }
 
 #color_picker {
-    width: 100%;
-    min-height: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    align-content: space-evenly;
+    justify-content: space-around;
 }
 
 #playground {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+}
+
+#bottom_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#palette {
+    display: grid;
+    gap: 0.5%;
+    grid-auto-rows: 90%;
+    align-content: space-evenly;
+    justify-content: space-around;
 }

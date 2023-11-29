@@ -12,7 +12,7 @@ let paletteElement = document.getElementById('palette');
 const visiblePalettePartSize = 15;
 paletteElement.style.gridTemplateColumns = `repeat(${visiblePalettePartSize}, 1fr)`;
 
-const nonColorFunctionalDivs = document.querySelectorAll('div:not(.container, #playground, #palette, #color_picker, #color_picker *)');
+const nonColorFunctionalDivs = document.querySelectorAll('div:not(#bottom_wrapper, .container, #playground, #palette, #color_picker, #color_picker *)');
 nonColorFunctionalDivs.forEach(e => {
     e.addEventListener('click', e => applyColor(e.target, selectedPaletteColor));
 });

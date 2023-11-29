@@ -15,7 +15,10 @@ html, body {
 
 #color_memory {
     display: grid;
-    grid-template-columns: repeat(15, 1fr);
+    gap: 0.5%;
+    grid-auto-rows: 90%;
+    align-content: space-evenly;
+    justify-content: space-around;
 }
 
 .memorized_color {
@@ -23,8 +26,12 @@ html, body {
 }
 
 #color_picker {
-    width: 100%;
-    min-height: 100%;
+    display: grid;
+    align-content: space-evenly;
+    justify-content: space-around;
+}
+
+#bottom_wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }

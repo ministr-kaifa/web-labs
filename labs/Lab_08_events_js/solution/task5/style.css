@@ -15,6 +15,10 @@ html, body {
 
 #palette {
     display: grid;
+    gap: 0.5%;
+    grid-auto-rows: 90%;
+    align-content: space-evenly;
+    justify-content: space-around;
 }
 
 #palette_control {
@@ -28,10 +32,9 @@ html, body {
 }
 
 #color_picker {
-    width: 100%;
-    min-height: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    align-content: space-evenly;
+    justify-content: space-around;
 }
 
 #playground {
@@ -47,4 +50,9 @@ html, body {
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+#bottom_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }

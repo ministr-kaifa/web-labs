@@ -13,3 +13,9 @@ html, body {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+
+#color_picker {
+    display: grid;
+    align-content: space-evenly;
+    justify-content: space-around;
+}

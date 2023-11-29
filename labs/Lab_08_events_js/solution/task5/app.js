@@ -11,7 +11,7 @@ paletteElement.style.gridTemplateColumns = `repeat(${visiblePalettePartSize}, 1f
 let paletteColors = [];    //цвета содержащиеся в палитре в формате стилевой строки rgb
 let visiblePalettePartStartIndex = 0;
 
-const nonColorFunctionalDivs = document.querySelectorAll('div:not(.container, #playground, #palette, #palette_control, #palette_control *, #palette *, #color_picker, #color_picker *)');
+const nonColorFunctionalDivs = document.querySelectorAll('div:not(#bottom_wrapper, .container, #playground, #palette, #palette_control, #palette_control *, #palette *, #color_picker, #color_picker *)');
 nonColorFunctionalDivs.forEach(e => {
     e.addEventListener('click', e => applyBackgroundColor(e.target, selectedPaletteColor));
 });
