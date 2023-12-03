@@ -11,29 +11,14 @@ a += 'world';
 
 //2
 var fruits = ['apple', 'strawberry', 'blueberry', 'raspberry', 'lemon'];
-fruits.map(fruit => {
-        let color;
-        switch (fruit) {
-            case "apple":
-                color = "green";
-                break;
-            case "strawberry":
-                color = "red";
-                break;
-            case "blueberry":
-                color = "blue";
-                break;
-            case "raspberry":
-                color = "light red";
-                break;
-            case "lemon":
-                color = "yellow";
-                break;
-            default:
-                throw new Error("No such color")
-        }
-        return {'name': fruit, 'color': color};
-}).forEach(fruit => console.log(fruit.name + " " + fruit.color));
+let fruitsColors = new Map([
+  ['apple', 'green'],
+  ['strawberry', 'red'],
+  ['blueberry', 'blue'],
+  ['raspberry', 'light red'],
+  ['lemon', 'yellow'],
+])
+fruits.forEach(fruitName => console.log(fruitName + " " + fruitsColors.get(fruitName)))
 
 
 //3
