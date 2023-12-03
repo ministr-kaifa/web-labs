@@ -1,0 +1,55 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 10%;
+}
+
+.App {
+  display: flex;
+  justify-content: space-around;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.Post {
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  min-width: 100px;
+  padding: 5%;
+}
+
+.PostList button {
+  background:none;
+  border:none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.deleteButton {
+  color: red;
+}
+
+.likedButton {
+  color: red;
+}
+
+.notLikedButton {
+  color: black;
+}
+
+.selectedTagFilter {
+  color: red;
+}
+
+.unselectedTagFilter {
+  color: black;
+}
