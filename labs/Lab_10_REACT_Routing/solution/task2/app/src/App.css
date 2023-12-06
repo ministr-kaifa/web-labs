@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: burlywood;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+header > a {
+  color: white;
+  text-decoration: none;
+  padding: 0 1rem;
+}
+
+header > a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  text-align: center;
+}
