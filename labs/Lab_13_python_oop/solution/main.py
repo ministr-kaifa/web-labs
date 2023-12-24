@@ -11,8 +11,8 @@ def convert_date(struct_time):
 
 if __name__ == '__main__':
 
-  payment_dao = CachedJsonFilePaymentDao(".\payments.json")
-  client_dao = CachedJsonFileClientDao(".\clients.json")
+  payment_dao = CachedJsonFilePaymentDao("..\payments.json")
+  client_dao = CachedJsonFileClientDao("..\clients.json")
   client_service = ClientService(payment_dao, client_dao)
   payment_service = PaymentService(payment_dao, client_dao)
 
