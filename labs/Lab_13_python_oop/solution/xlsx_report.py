@@ -25,9 +25,9 @@ class QuartalMostActiveClientsBlock(ReportDataBlock):
   
   def tables(self):
     table = {}
-    for quartal, clients_ids in self.quartal_clients.items():
+    for quartal, clients in self.quartal_clients.items():
       table.update({
-        str(quartal) : clients_ids
+        str(quartal) : [client.fio for client in clients]
       })
     return {"Топ клиентов по количеству платежей" : table}
 
