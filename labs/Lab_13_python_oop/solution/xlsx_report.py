@@ -146,7 +146,7 @@ class XlsxReportWriter:
     worksheet = workbook.add_worksheet('analytics')
     worksheet.freeze_panes(0, 1)
     worksheet.set_column(0, 0, 50)
-    worksheet.set_column(1, 100, 25)
+    worksheet.set_column(1, 100, 50)
     coords = namedtuple("Coords", ['row', 'col'])
 
     #приимает координаты ячейки, возвращает габариты того что напечатали
