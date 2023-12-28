@@ -60,7 +60,7 @@ if __name__ == '__main__':
 
   balances = {}
   for payment in payment_service.find_all():
-    balances.update({ clients[payment.client_id] : payment.amount + balances.get(payment.client_id, 0) })
+    balances.update({ clients[payment.client_id] : payment.amount + balances.get(clients[payment.client_id], 0) })
   profiteers = dict(sorted(balances.items(), key=lambda item: item[1], reverse=True)[:10])
   debtors = dict(sorted(balances.items(), key=lambda item: item[1], reverse=False)[:10])
 
