@@ -26,7 +26,7 @@ class CachedJsonFileClientDao(ClientDao):
 
   def find_all(self):
     if self.cache is None:
-      with open(self.file_path, 'r') as file:
+      with open(self.file_path, 'r', encoding='utf-8') as file:
         clients_data = json.load(file)
       clients_data = clients_data['clients']
       self.cache = [Client(**client_data) for client_data in clients_data]
