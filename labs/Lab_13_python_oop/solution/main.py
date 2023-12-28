@@ -15,7 +15,8 @@ if __name__ == '__main__':
   client_dao = CachedJsonFileClientDao("..\clients.json")
   client_service = ClientService(payment_dao, client_dao)
   payment_service = PaymentService(payment_dao, client_dao)
-
+  clients = {client.id: client for client in client_service.find_all()}
+  
   latest_payment_date = None
   oldest_payment_date = None
   for payment in payment_service.find_all():
@@ -38,7 +39,7 @@ if __name__ == '__main__':
   for quartal, payments in quartal_payments.items():
     clients_data = {}
     for payment in payments:
-      clients_data.update({payment.client_id : 1 + clients_data.get(payment.client_id, 0)})
+      clients_data.update({clients[payment.client_id]: 1 + clients_data.get(payment.client_id, 0)})
     quartal_clients.update({quartal : clients_data})
   for quartal in quartal_clients.keys():
     quartal_clients[quartal] = list(dict(sorted(quartal_clients[quartal].items(), key=lambda item: item[1], reverse=True)[:10]).keys())
