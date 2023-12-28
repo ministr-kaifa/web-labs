@@ -53,7 +53,7 @@ class AreaStatsBlock(ReportDataBlock):
     return { "Статистика распределения клиентов" : table }
 
 class MaxMinBalanceBlock(ReportDataBlock):
-  def __init__(self, debtors: Dict[int, int], profiteers: Dict[int, int]):
+  def __init__(self, debtors: Dict[Client, int], profiteers: Dict[Client, int]):
     self.debtors = debtors
     self.profiteers = profiteers
 
@@ -71,11 +71,11 @@ class MaxMinBalanceBlock(ReportDataBlock):
         "Состояние счёта" : []
       }
     }
-    for client_id, debt in self.debtors.items():
-      table["Задолжности"]["Клиент"].append(client_id)
+    for client, debt in self.debtors.items():
+      table["Задолжности"]["Клиент"].append(client.fio)
       table["Задолжности"]["Состояние счёта"].append(debt)
-    for client_id, profit in self.profiteers.items():
-      table["Прибыльность"]["Клиент"].append(client_id)
+    for client, profit in self.profiteers.items():
+      table["Прибыльность"]["Клиент"].append(client.fio)
       table["Прибыльность"]["Состояние счёта"].append(profit)
     return {"Статистика состояния счёта клиента" : table}
 
